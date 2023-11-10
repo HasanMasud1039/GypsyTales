@@ -1,4 +1,8 @@
 # GypsyTales : Traveling Agency
+# Live Link: https://gypsytales.netlify.app/
+
+**User Email: eve.holt@reqres.in**
+**Password:  pistol**
 
 ## Prerequisites
 
