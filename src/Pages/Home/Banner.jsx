@@ -159,7 +159,7 @@ const Banner = () => {
                     </div>
                     {
                         isSearch ?
-                            <div className={`absolute top-[70%] md:right-[10%] md:h-32 md:w-[85%]  md:bg-white bg-cyan-300  p-0 rounded-2xl`}>
+                            <div className={`absolute top-[70%] md:right-[10%] md:h-32 md:w-[85%]  md:bg-white bg-blue-800  pb-8 px-2 rounded-2xl`}>
                                 <form onSubmit={handleSave} className="grid grid-cols-2 gap-2 md:flex justify-evenly md:pb-4 h-full">
                                     <div className="form-control">
                                         <label className="label">

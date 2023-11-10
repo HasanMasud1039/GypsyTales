@@ -18,12 +18,13 @@ const Destination = () => {
             travelers: '134,231'
         },
         {
-            id: 2,
-            image: 'https://i.ibb.co/84BZHh9/band.jpg',
-            location: 'Bandarban',
-            travelers: '123,456',
+            id: 9,
+            image: 'https://i.ibb.co/x1sHK38/ctg.jpg',
+            location: 'Chattogram',
+            travelers: '120,000',
             padding: 'pt-[24px]'
         },
+
         {
             id: 3,
             image: 'https://i.ibb.co/P6BX81c/DSC0324.jpg',
@@ -64,11 +65,12 @@ const Destination = () => {
             padding: 'pt-[24px]'
         },
         {
-            id: 9,
-            image: 'https://i.ibb.co/x1sHK38/ctg.jpg',
-            location: 'Chattogram',
-            travelers: '120,000'
-        },
+            id: 2,
+            image: 'https://i.ibb.co/0tjsBBm/debo.jpg',
+            location: 'Bandarban',
+            travelers: '123,456'   
+        }
+
     ]
 
     return (

@@ -51,9 +51,17 @@ const Navbar = () => {
                             <li><Link to='/'>Home</Link></li>
                             <li><Link to='/about'>About</Link></li>
                             <li><Link to='/destinationDetails'>Destination</Link></li>
+                            {
+                            getIsLoggedInUser() ? (<>
+                                <li onClick={handleLogout}><Link to='/'>Logout</Link></li>
+                            </>
+                            )
+                                :
+                                (<li><Link to='/login'>Login</Link></li>)
+                        }
                         </ul>
                     </div>
-                    <img className='h-16' src={logo} alt="" />
+                    <img className='h-16 md:mx-0 mx-8' src={logo} alt="" />
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-lg font-semibold">
@@ -61,19 +69,19 @@ const Navbar = () => {
                         <li><Link to='/about'>About</Link></li>
                         <li><Link to='/destinationDetails'>Destination</Link></li>
                         {
-                                getIsLoggedInUser() ? (<>
-                                    <li onClick={handleLogout}><Link to='/'>Logout</Link></li>
-                                </>
-                                )
-                                    :
-                                    (<li><Link to='/login'>Login</Link></li>)
-                            }
+                            getIsLoggedInUser() ? (<>
+                                <li onClick={handleLogout}><Link to='/'>Logout</Link></li>
+                            </>
+                            )
+                                :
+                                (<li><Link to='/login'>Login</Link></li>)
+                        }
                     </ul>
                 </div>
                 {
                     getIsLoggedInUser() ? (
                         <div className="navbar-end md:pr-8">
-                            <h2 className='px-4 text-lg font-semibold'>{user?.first_name} {user?.last_name}</h2>
+                            <h2 className='px-4 text-lg md:block hidden font-semibold'>{user?.first_name} {user?.last_name}</h2>
                             <img className='w-16 h-16 rounded-full' src={user?.avatar} alt="USER" />
                         </div>)
                         :
