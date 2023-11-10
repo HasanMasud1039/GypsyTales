@@ -12,7 +12,6 @@ const Registration = () => {
 
     const onSubmit = (userData) => {
         if (userData) {
-
             // send data to DB
             fetch(`https://reqres.in/api/register`, {
                 method: 'POST',

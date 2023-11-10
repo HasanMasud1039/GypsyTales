@@ -25,11 +25,6 @@ const Category = () => {
             number: '12 Tours'
         },
         {
-            icon: 'https://i.ibb.co/2sZpjzm/sign.png',
-            title: 'Adventures',
-            number: '15 Tours'
-        },
-        {
             icon: 'https://i.ibb.co/8K9jy10/burger.png',
             title: 'Food',
             number: '26 Tours'
@@ -46,12 +41,12 @@ const Category = () => {
         },
     ]
     return (
-        <div className='p-8'>
+        <div className='md:p-8 p-4 md:mt-0 pt-56'>
             <div className='text-center space-y-4'>
                 <p className='text-blue-800 text-[32px] font-serif font-semibold'>Browse By Category</p>
                 <p className='text-black text-[48px] font-serif font-bold'>Pick A Tour Type</p>
             </div>
-            <div className='flex justify-evenly my-6'>
+            <div className='md:flex justify-evenly grid grid-cols-3 my-6'>
                 {
                     cardData.map(card =>
                         <div data-aos="fade-down" className='p-4 rounded-lg border-1 shadow-lg w-44 h-44 text-center flex flex-col items-center justify-center  space-y-2'>

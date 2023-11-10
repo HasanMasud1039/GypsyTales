@@ -11,7 +11,7 @@ const Partners = () => {
             <div className=' space-y-2'>
                 <p className='text-blue-800 text-center py-8 text-[32px] font-serif font-semibold'>Our Trusted Partners</p>
             </div>
-            <div className='flex justify-between px-8'>
+            <div className='md:flex justify-between grid grid-cols-3 px-8'>
                 <img className='w-36 p-2' src={img1} alt="" />
                 <img className='w-36 p-2' src={img2} alt="" />
                 <img className='w-36 p-2' src={img3} alt="" />

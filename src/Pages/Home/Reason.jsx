@@ -13,14 +13,14 @@ const Reason = () => {
         AOS.init({
             duration: 1200
         });
-      }, [])
+    }, [])
     return (
-        <div className='flex gap-4 py-12 px-12'>
-            <div  data-aos="fade-down" className=' py-8  w-[45%]'>
-                <div className=' space-y-2 my-8'>
+        <div className='md:flex gap-4 md:py-12  md:my-0 px-12'>
+            <div data-aos="fade-down" className=' py-8  md:w-[45%]'>
+                <div className='md:text-left text-center space-y-2 my-8'>
                     <p className='text-blue-800 text-[32px] font-serif font-semibold'>Why We Are The Best</p>
                     <p className='text-black text-[48px] font-serif font-bold'>Keep Things Flexible</p>
-                    <button className='btn p-4 btn-outline mt-8 hover:btn-warning'>Contact Us</button>
+
                 </div>
                 <div className='grid grid-cols-2 gap-4  py-4'>
                     <div>
@@ -50,17 +50,15 @@ const Reason = () => {
 
                 </div>
             </div>
-            <div className=' w-[50%]'>
+            <div className='ms-8 md:ms-1 md:mb-0 mb-72 md:w-[50%]'>
                 <div className='relative flex'>
-                    <img  data-aos="zoom-in"  className='w-[350px] m-4 border-2 ms-0 border-red-500 saturate-200 contrast-125' src={tour1} alt="" />
-                    <img data-aos="zoom-out" className='w-[350px] mt-24 border-2 border-red-500 absolute right-[40px] top-[-40px]' src={tour2} alt="" />
+                    <img data-aos="zoom-in" className='w-[350px] md:m-4 border-2 md:ms-0 ms-12 border-red-500 saturate-200 contrast-125' src={tour1} alt="" />
+                    <img data-aos="zoom-out" className='w-[350px] mt-24 border-2 border-red-500 absolute md:right-[40px] md:top-[-40px] top-0 right-16' src={tour2} alt="" />
                 </div>
                 <div className='relative flex'>
-                    <img data-aos="slide-right" className='w-[350px] m-4 border-2 border-red-500 saturate-150 contrast-125' src={tour3} alt="" />
-                    <img data-aos="slide-left" className='w-[350px] m-4 border-2 shadow-xl border-red-500 brightness-150 contrast-105 absolute right-[40px] top-[-20px]' src={tour4} alt="" />
+                    <img data-aos="slide-right" className='w-[350px] md:m-4 ms-8 border-2 border-red-500 saturate-150 md:block hidden contrast-125' src={tour3} alt="" />
+                    <img data-aos="slide-left" className='w-[350px] m-4 border-2 shadow-xl border-red-500 brightness-150 contrast-105 absolute md:right-[40px] md:top-[-20px] top-[64px]' src={tour4} alt="" />
                 </div>
-
-
             </div>
             <div>
 

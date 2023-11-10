@@ -29,13 +29,13 @@ const Testimonials_About = () => {
     ]
     return (
         <div className='py-8'>
-            <div className='flex justify-between'>
-                <div className='flex p-12 ms-4 relative'>
-                    <img className='h-64 w-80 border-4 absolute rotate-[-15deg] left-[90%]' src={img1} alt="" />
-                    <img className='h-64 w-80 rotate-[-12deg] border-4' src={img3} alt="" />
-                    <img className='h-64 w-80 border-4 absolute rotate-[-5deg] left-[60%] top-[50%]' src={img2} alt="" />
+            <div className='md:flex justify-between'>
+                <div className='flex p-12 ms-4 md:my-0 my-32 relative'>
+                    <img className='md:h-64 md:w-80 h-48 w-64 border-4 absolute rotate-[15deg] md:rotate-[-15deg] md:top-0 top-[-20%] left-[30%] md:left-[90%]' src={img1} alt="" />
+                    <img className='md:h-64 md:w-80 h-48 w-64 md:ms-0 ms-[-42px] rotate-[-12deg] border-4' src={img3} alt="" />
+                    <img className='md:h-64 md:w-80 h-48 w-64 border-4 absolute rotate-[-5deg] md:left-[60%] left-[30%] md:top-[50%] top-[60%]' src={img2} alt="" />
                 </div>
-                <div className='w-[50%] px-4'>
+                <div className='md:w-[50%] px-4'>
                     <div className='w-full'>
                         <div className='text-center space-y-2'>
                             <p className='text-red-500 text-[32px] font-serif font-semibold'>Testimonials</p><hr className='w-96 mx-auto' />

@@ -53,7 +53,7 @@ const Banner = () => {
         const searchText = { destination, type, date, guests };
         console.log(searchText);
         setSearchData(searchText);
-        
+
 
     }
     const handleSearchButton = () => {
@@ -62,10 +62,10 @@ const Banner = () => {
                 const matchData = predefinedNames.find(name =>
                     name.toLowerCase().includes(searchData.destination.toLowerCase())
                 );
-                if(matchData !== undefined){
+                if (matchData !== undefined) {
                     setIsSearch(true);
                 }
-                else{
+                else {
                     toast.error("Destination doesn't match")
                 }
             }
@@ -82,10 +82,10 @@ const Banner = () => {
         const name = form.name.value;
         const email = form.email.value;
         const phone = form.phone.value;
-        const userData = { name, email, phone};
+        const userData = { name, email, phone };
         console.log(userData);
         // setSearchData(searchText)
-        if(userData){
+        if (userData) {
             Swal.fire({
                 title: 'Booking Successful!',
                 text: 'Information Saved Successfully',
@@ -99,25 +99,25 @@ const Banner = () => {
     console.log(isSearch);
     return (
         <div>
-            <div className='relative min-h-fit'>
-                <img className=' filter brightness-50' src={bg} alt="" />
+            <div className='relative md:min-h-fit'>
+                <img className='md:h-full h-[450px] filter brightness-50' src={bg} alt="" />
 
                 <div className=''>
-                    <div className='absolute  top-[5%] left-[5%] h-[60%] flex justify-between gap-4'>
-                        <img className='w-112 h-full rounded-tl-3xl rounded-br-3xl brightness-125 saturate-150' src={photo3} alt="" />
+                    <div className='absolute  top-[5%] md:left-[5%] h-[60%] flex justify-between md:gap-4'>
+                        <img className='md:w-112 md:h-full rounded-tl-3xl rounded-br-3xl brightness-125 saturate-150' src={photo3} alt="" />
                         <div>
-                            <img className='w-96 h-96 mt-24 rounded-tr-3xl rounded-bl-3xl brightness-125 saturate-150' src={photo2} alt="" />
+                            <img className='md:w-96 md:h-96 md:block hidden mt-24 rounded-tr-3xl rounded-bl-3xl brightness-125 saturate-150' src={photo2} alt="" />
                         </div>
-                        <div className='p-8 mt-24 space-y-4 text-right'>
-                            <p className='text-[40px] font-serif text-yellow-400 font-bold'>Explore The</p>
-                            <p className='text-[48px] font-serif text-white font-bold'>Travel &<br />Adventures</p>
-                            <p className='text-xl  text-white font-semibold'>Find awesome hotel, car, tour, flight in Bangladesh</p>
+                        <div className='md:p-8 p-4 md:mt-24 md:space-y-8 text-right space-y-2'>
+                            <p className='md:text-[40px] text-xl font-serif text-yellow-400 font-bold'>Explore The</p>
+                            <p className='md:text-[48px] text-xl font-serif text-white font-bold'>Travel &<br /> <br />Adventures</p>
+                            <p className='md:text-xl  text-white font-semibold'>Find awesome hotel, car, tour, flight in Bangladesh</p>
 
                             {/* <img className='w-96 h-96 rounded-tr-3xl rounded-bl-3xl' src={photo2} alt="" /> */}
                         </div>
                     </div>
-                    <div className='absolute top-[70%] right-[10%] h-32 w-[85%] opacity-90 bg-white  p-4 rounded-2xl'>
-                        <form onSubmit={handleSearch} className="flex justify-evenly pb-8">
+                    <div className='absolute top-[70%] md:right-[10%] md:h-32 md:w-[85%] opacity-90 md:bg-white bg-slate-300  p-4 rounded-2xl'>
+                        <form onSubmit={handleSearch} className="md:flex grid grid-cols-2 gap-2 justify-evenly md:pb-8">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text text-lg text-black font-serif font-semibold">Destination</span>
@@ -159,13 +159,13 @@ const Banner = () => {
                     </div>
                     {
                         isSearch ?
-                            <div className={`absolute top-[85%] right-[10%] h-32 w-[85%] opacity-90 bg-white  p-4 rounded-2xl`}>
-                                <form onSubmit={handleSave} className="flex justify-evenly pb-8">
+                            <div className={`absolute top-[70%] md:right-[10%] md:h-32 md:w-[85%]  md:bg-white bg-cyan-300  p-0 rounded-2xl`}>
+                                <form onSubmit={handleSave} className="grid grid-cols-2 gap-2 md:flex justify-evenly md:pb-4 h-full">
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text text-lg text-black font-serif font-semibold">Destination</span>
                                         </label>
-                                        <input type="text" value={searchData.destination} placeholder="Destination" name='destination' className="input input-bordered"  />
+                                        <input type="text" value={searchData.destination} placeholder="Destination" name='destination' className="input input-bordered" />
                                     </div>
                                     <div className="form-control">
                                         <label className="label">
@@ -195,7 +195,7 @@ const Banner = () => {
                     }
                 </div>
             </div>
-            <Toaster/>
+            <Toaster />
         </div>
     );
 };

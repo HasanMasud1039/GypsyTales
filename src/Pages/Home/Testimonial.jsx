@@ -66,16 +66,16 @@ const Testimonial = () => {
                 <p className='text-black text-[48px] font-serif font-bold'>What Our Customer <br /> Says About Us</p>
             </div>
 
-            <div className='w-full flex justify-between'>
-                <div className=' w-[25%] relative'>
-                    <img data-aos="zoom-in" className='w-40 h-40 rounded-full absolute right-[70%] top-[10%] left-10' src={photo1} alt="" />
+            <div className='w-full md:flex justify-between'>
+                <div className=' md:w-[25%]  relative'>
+                    <img data-aos="zoom-in" className='w-40 h-40 rounded-full absolute right-[70%] md:top-[10%] md:left-10' src={photo1} alt="" />
                     <img data-aos="zoom-in"  className='w-32 h-32 rounded-full absolute right-[20%] top-[40%] ' src={photo2} alt="" />
-                    <img data-aos="zoom-in"  className='w-24 h-24 rounded-full  absolute right-[70%] top-[60%]' src={photo3} alt="" />
-                    <img data-aos="zoom-in"  className='w-28  rounded-full absolute right-[30%] top-[70%] ' src={photo4} alt="" />
+                    <img data-aos="zoom-in"  className='w-24 h-24 rounded-full  absolute md:right-[70%] right-[50%] top-[60%]' src={photo3} alt="" />
+                    <img data-aos="zoom-in"  className='w-28  rounded-full absolute right-[2%] md:right-[30%] top-[70%] ' src={photo4} alt="" />
                 </div>
-                <div className='w-[50%] '>
+                <div className='md:w-[50%] '>
 
-                    <img className='w-24  pt-12 mx-auto' src={ic} alt="" />
+                    <img className='w-24  md:pt-12 pt-32 mx-auto' src={ic} alt="" />
                     <Swiper navigation={true} spaceBetween={30}
                         centeredSlides={true}
                         autoplay={{
@@ -89,7 +89,7 @@ const Testimonial = () => {
                        className="mySwiper">
                         {
                             reviews.map(review => <SwiperSlide key={review.id}>
-                                <div className="flex flex-col text-center items-center mx-24 my-16">
+                                <div className="flex flex-col text-center items-center mx-24 md:my-16">
                                     <p className="text-xl my-10 ">"{review.review}"</p>
                                     <h3 className=" text-xl text-orange-400">-{review.name}</h3>
                                 </div>
@@ -97,8 +97,8 @@ const Testimonial = () => {
                         }
                     </Swiper>
                 </div>
-                <div className='relative w-[25%]'>
-                    <img data-aos="zoom-in"  className='w-40 h-40 rounded-full absolute right-[70%] top-[10%] left-10' src={photo6} alt="" />
+                <div className='relative md:w-[25%]'>
+                    <img data-aos="zoom-in"  className='w-40 h-40 rounded-full absolute md:right-[70%] top-[10%] left-10' src={photo6} alt="" />
                     <img data-aos="zoom-in"  className='w-32 h-32 rounded-full absolute right-[20%] top-[40%] ' src={photo7} alt="" />
                     <img data-aos="zoom-in"  className='w-24 h-24 rounded-full  absolute right-[70%] top-[60%]' src={photo8} alt="" />
                     <img data-aos="zoom-in"  className='w-28  rounded-full absolute right-[30%] top-[70%] ' src={photo5} alt="" />

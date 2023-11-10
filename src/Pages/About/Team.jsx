@@ -59,13 +59,13 @@ const Team = () => {
                 <p className='text-red-500 text-[32px] font-serif font-semibold'>Team</p><hr className='w-96 mx-auto' />
                 <p className='text-black text-[48px] font-serif font-bold'>Our Amazing Team</p>
             </div>
-            <div className=" flex justify-between py-8 gap-4 ">
+            <div className=" md:flex justify-between grid grid-cols-2 py-8 gap-4 ">
                 {
                     members.map(member => <div>
                         <div  data-aos="flip-up" className={`relative text-center`}>
                             <div className={`bg-base-100 border-0`}>
                                 <figure className='relative text-transparent hover:text-white'>
-                                    <img className='h-[300px] w-[300px] my-4 hover:brightness-50' src={member.photo} alt="" />
+                                    <img className='md:h-[300px] h-[200px] md:w-[300px] my-4 hover:brightness-50' src={member.photo} alt="" />
                                     <p className='flex absolute hover:block hover:flex  top-[40%] right-[25%]  text-3xl justify-between gap-4'>
                                         <Link to={member.facebook}><FaFacebook/> </Link>
                                         <Link to={member.linkedin}><FaLinkedin/> </Link>

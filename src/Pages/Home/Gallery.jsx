@@ -19,14 +19,14 @@ const Gallery = () => {
     return (
         <div>
             <hr />
-            <div data-aos="fade-up" className='flex justify-between gap-4 p-8'>
+            <div data-aos="fade-up" className='md:flex justify-between grid grid-cols-3 gap-4 p-8'>
                 <img className='w-40 h-40' src={img1} alt="" />
                 <img className='w-40 h-40' src={img2} alt="" />
                 <img className='w-40 h-40' src={img3} alt="" />
                 <img className='w-40 h-40' src={img4} alt="" />
                 <img className='w-40 h-40' src={img5} alt="" />
                 <img className='w-40 h-40' src={img6} alt="" />
-                <img className='w-40 h-40' src={img7} alt="" />
+                <img className='w-40 h-40 md:block hidden' src={img7} alt="" />
             </div>
         </div>
     );

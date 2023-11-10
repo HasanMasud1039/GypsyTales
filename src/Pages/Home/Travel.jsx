@@ -21,8 +21,8 @@ const Travel = () => {
         position: 'relative', // Position the pseudo-element relative to the div
     };
     return (
-        <div  className='flex justify-between py-12'>
-            <div data-aos="flip-right"  style={divStyle} className={`space-y-2   p-8  w-[50%]`}>
+        <div  className='md:flex justify-between md:py-12 pt-40'>
+            <div data-aos="flip-right"  style={divStyle} className={`space-y-2   p-8  md:w-[50%]`}>
                 <div>
                     <FaPlayCircle className=' w-16 h-16 text-yellow-500' />
                     <p className='text-white  text-[30px] font-serif font-semibold'>Are You ready To Travel</p>
@@ -30,7 +30,7 @@ const Travel = () => {
                     <button className='btn p-4 btn-warning mt-8  font-bold'>Contact Us</button>
                 </div>
             </div>
-            <div className='grid grid-cols-2 p-4 w-[40%]'>
+            <div className='grid grid-cols-2 p-4 md:w-[40%]'>
                 <div className='p-4 rounded-lg border-1 shadow-lg w-44 h-44 text-center flex flex-col items-center justify-center  space-y-2'>
                     <img className='w-14 m-1' src={photo1} alt="photo" />
                     <p className='text-gray-00 font-bold text-lg'>Wildlife Tours</p>

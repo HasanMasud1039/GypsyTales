@@ -12,9 +12,9 @@ const Updates = () => {
                 <p className='text-blue-800  text-[30px] font-serif font-semibold'>Updates</p>
                 <p className='text-[42px] font-serif font-bold'>Latest Travel Guide</p>
             </div>
-            <div className='grid grid-cols-2 gap-6'>
-            <div className='flex  p-6 '>
-                    <img className='w-48 h-40 mx-6 rounded-lg' src={tour1} alt="" />
+            <div className='grid grid-cols-2 gap-6 px-4'>
+                <div className='md:flex  md:p-6 '>
+                    <img className='w-48 h-40 md:mx-6 rounded-lg' src={tour1} alt="" />
                     <div>
                         <div className='flex justify-between'>
                             <p className='text-lg font-semibold'>July 25, 2023</p>
@@ -25,8 +25,8 @@ const Updates = () => {
                         </div>
                     </div>
                 </div>
-                <div className='flex  p-6 '>
-                    <img className='w-48 h-40 mx-6 rounded-lg' src={tour2} alt="" />
+                <div className='md:flex  md:p-6 '>
+                    <img className='w-48 h-40 md:mx-6 rounded-lg' src={tour2} alt="" />
                     <div>
                         <div className='flex justify-between'>
                             <p className='text-lg font-semibold'>July 25, 2022</p>
@@ -37,8 +37,8 @@ const Updates = () => {
                         </div>
                     </div>
                 </div>
-                <div className='flex  p-6 '>
-                    <img className='w-48 h-40 mx-6 rounded-lg' src={tour4} alt="" />
+                <div className='md:flex  md:p-6 '>
+                    <img className='w-48 h-40 md:mx-6 rounded-lg' src={tour4} alt="" />
                     <div>
                         <div className='flex justify-between'>
                             <p className='text-lg font-semibold'>May 21, 2023</p>
@@ -49,8 +49,8 @@ const Updates = () => {
                         </div>
                     </div>
                 </div>
-                <div className='flex  p-6 '>
-                    <img className='w-48 h-40 mx-6 rounded-lg' src={tour3} alt="" />
+                <div className='md:flex  md:p-6 '>
+                    <img className='w-48 h-40 md:mx-6 rounded-lg' src={tour3} alt="" />
                     <div>
                         <div className='flex justify-between'>
                             <p className='text-lg font-semibold'>March 20, 2023</p>

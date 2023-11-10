@@ -9,7 +9,7 @@ import img6 from '../../assets/partners/l6.png'
 const Partners_About = () => {
     return (
         <div className='py-8'>
-            <div data-aos="fade-down" className='flex contrast-0 justify-between px-8'>
+            <div data-aos="fade-down" className='grid grid-cols-3 md:flex contrast-0 justify-between px-8'>
                 <img className='w-36 p-2' src={img1} alt="" />
                 <img className='w-36 p-2' src={img2} alt="" />
                 <img className='w-36 p-2' src={img3} alt="" />

@@ -72,7 +72,7 @@ const Destination = () => {
     ]
 
     return (
-        <div className='px-12 py-8'>
+        <div className='md:px-12 px-4 py-8'>
             <div className='flex justify-between'>
                 <div className=' space-y-2'>
                     <p className='text-blue-800 text-[32px] font-serif font-semibold'>Destination</p>

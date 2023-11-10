@@ -17,9 +17,9 @@ const PopularTours = () => {
         toast.success("Added to Favourite", { position: 'top-right' });
     }
     return (
-        <div className='py-8'>
+        <div className='py-8 md:pt-0 pt-96 px-2'>
             <div className='flex justify-between'>
-                <p className='text-3xl font-bold font-serif py-4'>Popular Tours in {destination.name}</p>
+                <p className='text-3xl font-bold font-serif py-4'>Popular Tours in <span className='text-red-600'> {destination.name}</span></p>
                 <div>
                     <p className='flex gap-2 text-lg font-semibold mt-8'>See All<FaArrowRight className='mt-1' /></p>
                 </div>
