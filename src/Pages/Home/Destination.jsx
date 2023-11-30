@@ -3,6 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FaArrowRight } from 'react-icons/fa';
 import photo from '../../assets/w1.png'
+import SectionTitle from '../../Component/SectionTitle';
 
 const Destination = () => {
     useEffect(() => {
@@ -74,12 +75,13 @@ const Destination = () => {
     ]
 
     return (
-        <div className='md:px-12 px-4 py-8'>
+        <div className='md:px-12 px-4 py-8 dark:text-white'>
             <div className='flex justify-between'>
-                <div className=' space-y-2'>
-                    <p className='text-blue-800 text-[32px] font-serif font-semibold'>Destination</p>
-                    <p className='text-black text-[48px] font-serif font-bold'>Top Destination</p>
-                </div>
+            <SectionTitle heading={'Top Destination'} subheading={'Destination'} additionalStyle={'text-left'}></SectionTitle>
+                {/* <div className=' space-y-2'> 
+                    <p style={{fontFamily :'Edu TAS Beginner'}} className='text-blue-800 md:text-[32px] text-[24px] font-semibold'>Destination</p>
+                    <p className='text-black dark:text-white md:text-[48px] text-[32px]  font-serif font-bold'>Top Destination</p>
+                </div> */}
                 <div>
                     <p className='flex gap-2 text-lg font-semibold mt-8'>See All<FaArrowRight className='mt-1' /></p>
                 </div>
@@ -87,11 +89,11 @@ const Destination = () => {
             <div className="carousel carousel-center w-full px-4 py-8 space-x-4 ">
                 {
                     cardData.map(card => <div>
-                        <div data-aos="fade-right" className={`carousel-item relative`} id={card.id}>
-                            <div className={`card w-96 bg-base-100 border-0 ${card?.padding}`}>
+                        <div data-aos="fade-right" className={`carousel-item relative ${card?.padding}`} id={card.id}>
+                            <div className={`card w-96 dark:bg-zinc-300 border-0 `}>
                                 <figure><img className='h-[300px]' src={card.image} alt="" /></figure>
                                 <div className="card-body">
-                                    <h2 className="card-location text-xl font-bold font-serif">
+                                    <h2 className="card-location text-xl dark:text-black font-bold font-serif">
                                         {card.location}
                                     </h2>
                                     <p className='font-semibold text-lg text-slate-500'>{card.travelers} Travelers</p>

@@ -5,6 +5,10 @@ import Login from "../Login_Registration/Login";
 import Registration from "../Login_Registration/Registration";
 import About from "../Pages/About";
 import DestinationDetails from "../Pages/DestinationDetails";
+import Tours from "../Pages/Tours";
+import Blogs from "../Pages/Blogs";
+import DestinationHome from "../Pages/DestinationDetails/DestinationHome";
+import AboutDestination from "../Pages/DestinationDetails/AboutDestination";
 
 const router = createBrowserRouter([
     {
@@ -28,9 +32,22 @@ const router = createBrowserRouter([
                 element: <About/>
             },
             {
-                path:'/destinationDetails',
-                element: <DestinationDetails/>
-            }
+                path:'/destHome',
+                element: <DestinationHome/>
+            },
+            {
+                path:'/destHome/:location',
+                // element: <DestinationDetails/>
+                element: <AboutDestination/>
+            },
+            {
+                path:'/tours',
+                element: <Tours/>
+            },
+            {
+                path:'/blogs',
+                element: <Blogs/>
+            },
         ]
     }
 ])

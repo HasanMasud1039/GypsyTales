@@ -8,6 +8,7 @@ import img1 from '../../assets/bg/m2.webp'
 import img2 from '../../assets/bg/m21.jpg'
 import img3 from '../../assets/bg/m3.jpeg'
 import ic from '../../assets/testimonial/ic.png'
+import SectionTitle from '../../Component/SectionTitle';
 
 const Testimonials_About = () => {
     const reviews = [
@@ -29,18 +30,19 @@ const Testimonials_About = () => {
     ]
     return (
         <div className='py-8'>
-            <div className='md:flex justify-between'>
+            <div className='md:flex mb-4 justify-between'>
                 <div className='flex p-12 ms-4 md:my-0 my-32 relative'>
                     <img className='md:h-64 md:w-80 h-48 w-64 border-4 absolute rotate-[15deg] md:rotate-[-15deg] md:top-0 top-[-20%] left-[30%] md:left-[90%]' src={img1} alt="" />
                     <img className='md:h-64 md:w-80 h-48 w-64 md:ms-0 ms-[-42px] rotate-[-12deg] border-4' src={img3} alt="" />
                     <img className='md:h-64 md:w-80 h-48 w-64 border-4 absolute rotate-[-5deg] md:left-[60%] left-[30%] md:top-[50%] top-[60%]' src={img2} alt="" />
                 </div>
                 <div className='md:w-[50%] px-4'>
+                <SectionTitle heading={'What Travelers Say'} subheading={'Testimonials'} additionalStyle={'text-center'}/>
                     <div className='w-full'>
-                        <div className='text-center space-y-2'>
+                        {/* <div className='text-center space-y-2'>
                             <p className='text-red-500 text-[32px] font-serif font-semibold'>Testimonials</p><hr className='w-96 mx-auto' />
-                            <p className='text-black text-[48px] font-serif font-bold'>What Travelers Say</p>
-                        </div>
+                            <p className='text-black dark:text-white text-[48px] font-serif font-bold'>What Travelers Say</p>
+                        </div> */}
 
                         <img className='w-24  pt-2 mx-auto' src={ic} alt="" />
                         <Swiper navigation={true} spaceBetween={30}
@@ -57,7 +59,7 @@ const Testimonials_About = () => {
                             {
                                 reviews.map(review => <SwiperSlide key={review.id}>
                                     <div className="flex flex-col text-center items-center mx-24 my-4">
-                                        <p className="text-xl my-10 ">"{review.review}"</p>
+                                        <p style={{fontFamily: 'Edu TAS Beginner'}} className="text-xl dark:text-zinc-300 my-10 ">"{review.review}"</p>
                                         <h3 className=" text-xl text-orange-400">-{review.name}</h3>
                                     </div>
                                 </SwiperSlide>)
@@ -66,7 +68,7 @@ const Testimonials_About = () => {
                     </div>
                 </div>
             </div>
-
+<hr />
         </div>
     );
 };

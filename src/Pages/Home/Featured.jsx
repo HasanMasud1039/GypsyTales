@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { FaClock, FaLocationArrow, FaStar } from 'react-icons/fa';
+import { FaArrowRight, FaClock, FaLocationArrow, FaStar } from 'react-icons/fa';
 import icon from '../../assets/icons/favourite.png'
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -10,7 +10,7 @@ const Featured = () => {
         AOS.init({
             duration: 1200
         });
-      }, [])
+    }, [])
     const cardData = [
         // {
         //     id: 1,
@@ -102,22 +102,26 @@ const Featured = () => {
             days: 3,
             costFrom: 3000
         },
-
     ]
     const addToFavourite = () => {
-        toast.success("Added to Favourite", {position: 'top-right'});
+        toast.success("Added to Favourite", { position: 'top-right' });
     }
     return (
-        <div className='bg-blue-900'>
-            <div className=' space-y-2 text-center py-8'>
-                <p className='text-white text-[32px] font-serif font-semibold'>Tours</p>
-                <p className='text-white text-[48px] font-serif font-bold'>Featured Tours</p>
+        <div className='bg-blue-900 pt-4'>
+            <div className='flex justify-between '>
+                <div className='ms-8 space-y-2 px-4'>
+                    <p style={{fontFamily :'Edu TAS Beginner'}} className=' md:text-[32px] text-[24px] text-orange-500  font-mono font-semibold'>--- Tours ---</p>
+                    <p style={{fontFamily : 'Chakra Petch'}} className='text-white md:text-[48px] text-[32px]  font-serif font-bold'>Featured Tours</p>
+                </div>
+                <div>
+                    <p className='flex gap-2 text-white text-lg font-semibold md:mr-12 mt-8'>See All<FaArrowRight className='mt-1' /></p>
+                </div>
             </div>
             <div className="carousel carousel-center w-full px-4 py-8 space-x-4 ">
                 {
                     cardData.map(card => <div>
-                        <div data-aos="zoom-in" className='carousel-item px-8 relative h-[600px]'>
-                            <div className=' w-96 bg-base-100 border-0 '>
+                        <div data-aos="zoom-in" className='carousel-item gap-2 ps-8 relative h-[600px] '>
+                            <div className=' w-96 bg-base-100 border-0 dark:bg-zinc-300'>
                                 <figure className='relative'><img className='h-[300px]' src={card.image} alt="" /></figure>
                                 <p className='absolute top-5 right-10 px-2 btn rounded-full' onClick={addToFavourite}><img className='w-8 h-10' src={icon} alt="" /></p>
                                 <div className="card-body">

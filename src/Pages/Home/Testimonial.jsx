@@ -15,6 +15,7 @@ import photo6 from '../../assets/testimonial/p8.JPG'
 import photo7 from '../../assets/testimonial/p7.JPG'
 import photo8 from '../../assets/testimonial/p7.JPG'
 import ic from '../../assets/testimonial/ic.png'
+import SectionTitle from '../../Component/SectionTitle';
 
 const Testimonial = () => {
     useEffect(() => {
@@ -60,11 +61,12 @@ const Testimonial = () => {
         },
     ]
     return (
-        <div>
-            <div className=' space-y-2 my-8 text-center'>
-                <p className='text-blue-800 text-[32px] font-serif font-semibold'>Testimonial</p>
-                <p className='text-black text-[48px] font-serif font-bold'>What Our Customer <br /> Says About Us</p>
-            </div>
+        <div className='dark:text-white bg-blue-100 dark:bg-gray-900 md:py-8 py-4'>
+            <SectionTitle subheading={'Testimonial'} heading={'What Our Customer Says About Us'} additionalStyle={' text-center'}></SectionTitle>
+            {/* <div className=' space-y-2 my-8 text-center'>
+                <p className='text-blue-800  dark:text-blue-300  text-[24px] md:text-[32px] font-serif font-semibold'>Testimonial</p>
+                <p className='text-black dark:text-white text-[32px] md:text-[48px] font-serif font-bold'>What Our Customer <br /> Says About Us</p>
+            </div> */}
 
             <div className='w-full md:flex justify-between'>
                 <div className=' md:w-[25%]  relative'>
@@ -90,18 +92,18 @@ const Testimonial = () => {
                         {
                             reviews.map(review => <SwiperSlide key={review.id}>
                                 <div className="flex flex-col text-center items-center mx-24 md:my-16">
-                                    <p className="text-xl my-10 ">"{review.review}"</p>
+                                    <p style={{fontFamily: 'Edu TAS Beginner'}} className="text-xl my-10 ">"{review.review}"</p>
                                     <h3 className=" text-xl text-orange-400">-{review.name}</h3>
                                 </div>
                             </SwiperSlide>)
                         }
                     </Swiper>
                 </div>
-                <div className='relative md:w-[25%]'>
-                    <img data-aos="zoom-in"  className='w-40 h-40 rounded-full absolute md:right-[70%] top-[10%] left-10' src={photo6} alt="" />
+                <div className='relative  md:w-[25%]'>
+                    <img data-aos="zoom-in"  className='w-40 h-40 rounded-full absolute md:right-[70%] md:top-[10%] left-10' src={photo6} alt="" />
                     <img data-aos="zoom-in"  className='w-32 h-32 rounded-full absolute right-[20%] top-[40%] ' src={photo7} alt="" />
-                    <img data-aos="zoom-in"  className='w-24 h-24 rounded-full  absolute right-[70%] top-[60%]' src={photo8} alt="" />
-                    <img data-aos="zoom-in"  className='w-28  rounded-full absolute right-[30%] top-[70%] ' src={photo5} alt="" />
+                    <img data-aos="zoom-in"  className='w-24 h-24 rounded-full  absolute right-[80%] md:right-[70%] top-[60%]' src={photo8} alt="" />
+                    <img data-aos="zoom-in"  className='w-28  rounded-full absolute right-[2%] md:right-[30%] top-[70%] ' src={photo5} alt="" />
                 </div>
             </div>
 

@@ -6,6 +6,7 @@ import tour1 from '../../assets/ship.jpg'
 import tour2 from '../../assets/trip.jpg'
 import tour3 from '../../assets/tour.jpg'
 import tour4 from '../../assets/tour2.jpg'
+import SectionTitle from '../../Component/SectionTitle';
 
 
 const Reason = () => {
@@ -17,35 +18,35 @@ const Reason = () => {
     return (
         <div className='md:flex gap-4 md:py-12  md:my-0 px-12'>
             <div data-aos="fade-down" className=' py-8  md:w-[45%]'>
-                <div className='md:text-left text-center space-y-2 my-8'>
-                    <p className='text-blue-800 text-[32px] font-serif font-semibold'>Why We Are The Best</p>
-                    <p className='text-black text-[48px] font-serif font-bold'>Keep Things Flexible</p>
-
-                </div>
+            <SectionTitle heading={'Keep Things Flexible'} subheading={'Why We Are The Best'} additionalStyle={'text-left'}></SectionTitle>
+                {/* <div className='md:text-left text-center space-y-2 my-8'>
+                    <p className='text-blue-800 md:text-[32px] text-[24px]  font-serif font-semibold'>Why We Are The Best</p>
+                    <p className='text-black dark:text-white md:text-[48px] text-[32px]  font-serif font-bold'>Keep Things Flexible</p>
+                </div> */}
                 <div className='grid grid-cols-2 gap-4  py-4'>
                     <div>
                         <div className='relative btn btn-warning w-12 rounded-full'>
-                            <p className='left-2 text-3xl font-semibold font-serif absolute'>100+ </p>
+                            <p className='left-2 text-3xl font-semibold dark:text-white font-serif absolute'>100+ </p>
                         </div>
-                        <br /><span className='text-lg text-slate-600 font-semibold'>Total Destinations</span>
+                        <br /><span className='text-lg text-slate-600 dark:text-slate-300 font-semibold'>Total Destinations</span>
                     </div>
                     <div>
                         <div className='relative btn btn-warning w-12 rounded-full'>
-                            <p className='left-2 text-3xl font-semibold font-serif absolute'>10K+ </p>
+                            <p className='left-2 text-3xl font-semibold dark:text-white font-serif absolute'>10K+ </p>
                         </div>
-                        <br /><span className='text-lg text-slate-600 font-semibold'>Total Reviews</span>
+                        <br /><span className='text-lg text-slate-600 dark:text-slate-300 font-semibold'>Total Reviews</span>
                     </div>
                     <div>
                         <div className='relative btn btn-warning w-12 rounded-full'>
-                            <p className='left-2 text-3xl font-semibold font-serif absolute'>800+ </p>
+                            <p className='left-2 text-3xl font-semibold dark:text-white font-serif absolute'>800+ </p>
                         </div>
-                        <br /><span className='text-lg text-slate-600 font-semibold'>Travel Packages</span>
+                        <br /><span className='text-lg text-slate-600 dark:text-slate-300 font-semibold'>Travel Packages</span>
                     </div>
                     <div>
                         <div className='relative btn btn-warning w-12 rounded-full'>
-                            <p className='left-2 text-3xl font-semibold font-serif absolute'>9K+ </p>
+                            <p className='left-2 text-3xl font-semibold dark:text-white font-serif absolute'>9K+ </p>
                         </div>
-                        <br /><span className='text-lg text-slate-600 font-semibold'>Positive Reviews</span>
+                        <br /><span className='text-lg text-slate-600 dark:text-slate-300 font-semibold'>Positive Reviews</span>
                     </div>
 
                 </div>

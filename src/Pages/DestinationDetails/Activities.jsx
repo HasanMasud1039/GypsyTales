@@ -6,30 +6,30 @@ import icon from '../../assets/icons/favourite.png'
 import toast, { Toaster } from 'react-hot-toast';
 import { data } from '/public/Data'
 
-const Activities = () => {
+const Activities = ({location}) => {
     useEffect(() => {
         AOS.init({
             duration: 2000
         });
       }, [])
-    const destination = data["rangamati"];
+    const destination = data[location];
     const addToFavourite = () => {
         toast.success("Added to Favourite", { position: 'top-right' });
     }
     return (
-        <div className='py-8 px-2'>
+        <div className='py-8 md:py-0 md:px-0 px-2'>
             <div className='flex justify-between'>
-                <p className='text-3xl font-bold font-serif py-4'>Activities in <span className='text-red-600'> {destination.name}</span></p>
+                <p style={{fontFamily : 'Chakra Petch'}} className='text-3xl dark:text-white md:px-8 font-bold font-serif py-4'>Activities in <span className='text-red-600'> {destination.name}</span></p>
                 <div>
-                    <p className='flex gap-2 text-lg font-semibold mt-8'>See All<FaArrowRight className='mt-1' /></p>
+                    <p className='flex gap-2 text-lg font-semibold dark:text-white md:mr-8 mt-8'>See All<FaArrowRight className='mt-1' /></p>
                 </div>
             </div>
-            <div className="carousel carousel-center w-full px-8 py-8">
+            <div className="carousel carousel-center w-full md:px-6 px-8 py-8">
                 {
                     destination.activities.map(card => <div>
                         <div data-aos="fade-left" className='carousel-item px-2 relative h-[600px]'>
-                            <div className='border-2 w-96 bg-base-100 border-0 '>
-                                <figure className='relative'><img className='h-[300px]' src={card.image} alt="" /></figure>
+                            <div className='border-2 w-96 dark:bg-zinc-300 border-0 '>
+                                <figure className='relative'><img className='h-[300px] w-full' src={card.image} alt="" /></figure>
                                 <p className='absolute top-5 right-10 px-2 btn rounded-full' onClick={addToFavourite}><img className='w-8 h-10' src={icon} alt="" /></p>
                                 <div className="card-body">
                                     <h2 className="flex  gap-4 text-slate-500 text-md font-bold font-serif">

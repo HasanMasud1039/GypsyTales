@@ -1,23 +1,17 @@
 import React, { useContext, useState } from 'react';
-import bg from '../../assets/bg/w11.jpg'
-import photo1 from '../../assets/bg/m1.jpg'
-import photo2 from '../../assets/bg/m2.webp'
-import photo3 from '../../assets/bg/m21.jpg'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import toast, { Toaster } from 'react-hot-toast';
-import { AuthContext } from '../../Provider/AuthProvider';
+import { AuthContext } from '../Provider/AuthProvider';
 
-const Banner = () => {
-    const predefinedNames = ['Rangamati', 'Cox Bazar', 'Sylhet', 'Chattogram', 'Dhaka', 'Saint Martin', 'Bandarban'];
-    const userEmail = localStorage.getItem('userEmail');
+const AbsoluteBanner = ({ image, heading, subHeading }) => {
+    const { user } = useContext(AuthContext);
+    const predefinedNames = ['Rangamati', "Cox's Bazar", 'Sylhet', 'Chattogram', 'Dhaka', 'Saint Martin', 'Bandarban'];
     const storageSearchDataJSON = localStorage.getItem('searchData');
     const storageSearchData = JSON.parse(storageSearchDataJSON);
     const navigate = useNavigate();
     const [isSearch, setIsSearch] = useState(false);
     const [searchData, setSearchData] = useState();
-    const { user} = useContext(AuthContext);
-
     const [inputValue, setInputValue] = useState('');
     const [suggestions, setSuggestions] = useState([]);
 
@@ -37,10 +31,6 @@ const Banner = () => {
         setSuggestions([]);
     };
 
-    console.log(storageSearchData);
-    // console.log(destinationData);
-
-
     const handleSearch = event => {
         event.preventDefault();
         const form = event.target;
@@ -49,10 +39,8 @@ const Banner = () => {
         const date = form.date.value;
         const guests = form.guests.value;
         const searchText = { destination, type, date, guests };
-        console.log(searchText);
+        // console.log(searchText);
         setSearchData(searchText);
-
-
     }
     const handleSearchButton = () => {
         if (searchData) {
@@ -68,8 +56,6 @@ const Banner = () => {
                 }
             }
             else {
-                const searchDataJson = JSON.stringify(searchData)
-                localStorage.setItem('searchData', searchDataJson);
                 navigate('/login');
             }
         }
@@ -81,7 +67,6 @@ const Banner = () => {
         const email = form.email.value;
         const phone = form.phone.value;
         const userData = { name, email, phone };
-        console.log(userData);
         // setSearchData(searchText)
         if (userData) {
             Swal.fire({
@@ -97,22 +82,15 @@ const Banner = () => {
     return (
         <div>
             <div className='relative md:min-h-fit'>
-                <img className='md:h-full h-[450px] filter brightness-50' src={bg} alt="" />
+                <img className='md:h-full h-[450px] filter brightness-50' src={image} alt="" />
 
                 <div className=''>
-                    <div className='absolute  top-[5%] md:left-[5%] h-[60%] flex justify-between md:gap-4'>
-                        <img className='md:w-112 md:h-full rounded-tl-3xl rounded-br-3xl dark:brightness-100 brightness-125 saturate-150' src={photo3} alt="" />
-                        <div>
-                            <img className='md:w-96 md:h-96 md:block hidden mt-24 rounded-tr-3xl rounded-bl-3xl dark:brightness-100 brightness-125 saturate-150' src={photo2} alt="" />
-                        </div>
-                        <div className='md:p-8 p-4 md:mt-24 md:space-y-8 text-right space-y-2'>
-                            <p className='md:text-[40px] text-xl font-serif text-orange-500 font-bold'>Explore The</p>
-                            <p style={{fontFamily : 'Chakra Petch'}} className='md:text-[48px] text-xl font-serif text-white font-bold'>Travel &<br /> <br />Adventures</p>
-                            <p className='md:text-xl  text-slate-200 font-semibold'>Find awesome hotel, car, tour, flight in Bangladesh</p>
 
-                            {/* <img className='w-96 h-96 rounded-tr-3xl rounded-bl-3xl' src={photo2} alt="" /> */}
-                        </div>
+                    <div className='absolute top-[25%] md:left-[40%] left-[10%] text-center space-y-8 md:space-y-16'>
+                        <p style={{ fontFamily: 'Chakra Petch' }} className='text-[42px] text-red-600 font-bold font-serif'>  {heading}</p>
+                        <p style={{ fontFamily: 'Chakra Petch' }} className='text-[22px]  font-bold text-white font-serif'><Link to='/'>Home </Link>/ {subHeading}</p>
                     </div>
+
                     <div className='absolute top-[70%] md:right-[10%] md:h-32 md:w-[85%] opacity-90 md:bg-white bg-slate-300  p-4 rounded-2xl'>
                         <form onSubmit={handleSearch} className="md:flex grid grid-cols-2 gap-2 justify-evenly md:pb-8">
                             <div className="form-control">
@@ -150,14 +128,14 @@ const Banner = () => {
                                 <input type="number" placeholder="0" defaultValue={storageSearchData?.guests} name='guests' className="input input-bordered" required />
                             </div>
                             <div className="form-control mt-10">
-                                <button onClick={handleSearchButton} type='submit' className="btn btn-warning  text-black font-bold">Search</button>
+                                <button onClick={handleSearchButton} type='submit' className="p-4 rounded-xl bg-red-600 font-semibold text-white">Search</button>
                             </div>
                         </form>
                     </div>
                     {
                         isSearch ?
                             <div className={`absolute top-[70%] md:right-[10%] md:h-32 md:w-[85%]  md:bg-white bg-blue-800  pb-8 px-2 rounded-2xl`}>
-                                <form onSubmit={handleSave} className="grid grid-cols-2 gap-2 md:flex justify-evenly md:mt-4 md:pb-4 h-full">
+                                <form onSubmit={handleSave} className="grid grid-cols-2 gap-2 md:flex justify-evenly md:pb-4 h-full">
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text text-lg text-black font-serif font-semibold">Destination</span>
@@ -184,7 +162,7 @@ const Banner = () => {
                                         <input type="text" placeholder="Contact No." name='phone' className="input input-bordered" required />
                                     </div>
                                     <div className="form-control mt-10">
-                                        <button type='submit' className="btn btn-warning  text-black font-bold">Save</button>
+                                        <button type='submit' className="p-4 rounded-xl bg-red-600 font-semibold text-white">Save</button>
                                     </div>
                                 </form>
                             </div>
@@ -197,4 +175,4 @@ const Banner = () => {
     );
 };
 
-export default Banner;
+export default AbsoluteBanner;

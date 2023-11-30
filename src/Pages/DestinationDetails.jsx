@@ -9,8 +9,6 @@ const DestinationDetails = () => {
         <div>
             <Map_Weather />
             <AboutDestination />
-            <PopularTours/>
-            <Activities/>
         </div>
     );
 };
