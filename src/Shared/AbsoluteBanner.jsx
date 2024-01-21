@@ -82,13 +82,13 @@ const AbsoluteBanner = ({ image, heading, subHeading }) => {
     return (
         <div>
             <div className='relative md:min-h-fit'>
-                <img className='md:h-full h-[450px] filter brightness-50' src={image} alt="" />
+                <img className='md:h-full h-[450px] filter brightness-50 saturate-150 contrast-150' src={image} alt="" />
 
                 <div className=''>
 
-                    <div className='absolute top-[25%] md:left-[40%] left-[10%] text-center space-y-8 md:space-y-16'>
-                        <p style={{ fontFamily: 'Chakra Petch' }} className='text-[42px] text-red-600 font-bold font-serif'>  {heading}</p>
-                        <p style={{ fontFamily: 'Chakra Petch' }} className='text-[22px]  font-bold text-white font-serif'><Link to='/'>Home </Link>/ {subHeading}</p>
+                    <div className='absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center space-y-4 md:space-y-8'>
+                        <p style={{ fontFamily: 'Chakra Petch' }} className='text-[42px] text-[#FB1805] font-bold font-serif'>  {heading}</p>
+                        <p style={{ fontFamily: 'Chakra Petch' }} className='text-[21px] text-white font-serif'><Link to='/'>Home </Link>/ <span className='text-[#FB1805]'>{subHeading}</span></p>
                     </div>
 
                     <div className='absolute top-[70%] md:right-[10%] md:h-32 md:w-[85%] opacity-90 md:bg-white bg-slate-300  p-4 rounded-2xl'>

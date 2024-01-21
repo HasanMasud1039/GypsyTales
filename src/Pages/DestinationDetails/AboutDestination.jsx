@@ -15,7 +15,7 @@ const AboutDestination = () => {
         <div>
             <div className='relative bg-green-900 w-screen'>
                 <img className='h-96 w-full brightness-50' src={destination.banner} alt="" />
-                <div className='absolute top-[25%] md:left-[25%] left-[10%] text-center space-y-8 md:space-y-16'>
+                <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center space-y-8 md:space-y-16'>
                     <p style={{ fontFamily: 'Chakra Petch' }} className='text-[42px] text-orange-500 font-bold font-serif'>{destination.name}</p>
                     <p style={{ fontFamily: 'Chakra Petch' }} className='text-[22px] text-orange-500 font-bold text-white font-serif'><Link to='/'>Home</Link> / <Link to='/destHome'>Destination</Link> / <span className='text-cyan-400'>{destination.name}</span></p>
                 </div>

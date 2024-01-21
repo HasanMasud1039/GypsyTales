@@ -1,9 +1,7 @@
 import { createContext, useEffect, useState } from 'react';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile, FacebookAuthProvider, signInWithRedirect } from "firebase/auth";
-
 import axios from 'axios';
 import app from '../firebase/firebase.config';
-
 
 export const AuthContext = createContext(null)
 const auth = getAuth(app);
@@ -51,7 +49,7 @@ useEffect(() => {
 
         // get and set token
         if(currentUser){
-            axios.post('https://gypsy-tales-server-hasanmasud1039.vercel.app/jwt', {email: currentUser.email})
+            axios.post('https://gypsy-tales-server.vercel.app/jwt', {email: currentUser.email})
             .then(data =>{
                 console.log(data.data.token)
                 localStorage.setItem('access-token', data.data.token)
@@ -60,9 +58,7 @@ useEffect(() => {
         }
         else{
             localStorage.removeItem('access-token')
-        }
-
-        
+        }        
     });
     return () => {
         return unsubscribe();

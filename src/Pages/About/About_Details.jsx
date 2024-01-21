@@ -6,6 +6,7 @@ import img1 from '../../assets/bg/m1.jpg'
 import img2 from '../../assets/bg/m21.jpg'
 import { FaCompactDisc, FaPlay } from 'react-icons/fa';
 import SectionTitle from '../../Component/SectionTitle';
+import { Link } from 'react-router-dom';
 
 const About_Details = () => {
     useEffect(() => {
@@ -16,11 +17,12 @@ const About_Details = () => {
     return (
         <div>
             <div className='relative bg-green-900 w-screen'>
-                <img className='h-96 w-full brightness-50' src={banner} alt="" />
-                <div  className='absolute top-[25%] left-[30%] text-center space-y-16'>
-                    <p className='text-[42px] font-bold text-white font-serif'>About </p>
-                    <p className='text-[22px] font-bold text-white font-serif'>Home /<span className='text-red-500'>About</span></p>
+                <img className='h-96 w-full brightness-50 contrast-150' src={banner} alt="" />
+                <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center space-y-8'>
+                    <p className='text-5xl font-bold text-[#EBEF09] font-serif'>About </p>
+                    <p className='text-xl font-bold text-white font-serif'><Link to='/'>Home</Link> /<span className='text-[#EBEF09]'>About</span></p>
                 </div>
+
             </div>
             <div className='md:flex justify-between'>
                 <div className='flex md:p-16 p-4 md:ms-12 mt-4 relative'>

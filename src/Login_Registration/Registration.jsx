@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { Controller, useForm, } from 'react-hook-form';
 import toast, { Toaster } from 'react-hot-toast';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../Provider/AuthProvider';
+import { FaEnvelope, FaImage, FaLocationArrow, FaPhoneAlt, FaUserAlt, FaUserLock } from 'react-icons/fa';
 
 
 const Registration = () => {
@@ -13,7 +14,7 @@ const Registration = () => {
     const navigate = useNavigate();
 
     const onSubmit = data => {
-console.log(data);
+        console.log(data);
         createUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
@@ -49,25 +50,32 @@ console.log(data);
     };
 
     return (
-        <div className='h-screen '>
-            <h1 className='text-3xl font-bold dark:text-white text-center py-8 uppercase'>register Now</h1>
-
-            <form className='max-w-[600px] mx-auto p-20 border border-gray-300 rounded-lg shadow-md bg-gray-200 dark:bg-gray-600' onSubmit={handleSubmit(onSubmit)}>
+        <div className='h-screen bg-gradient-to-t from-teal-500'>
+            <h1 className='text-xl font-bold text-center dark:text-white mt-16 max-w-[600px] mx-auto uppercase  grid grid-cols-2'>
+                <NavLink className='w-full p-2 border-r-2 bg-gradient-to-r from-red-500 to-sky-200' to='/login'>Login</NavLink>
+                <NavLink className={({ isActive }) =>
+                    isActive ? "w-full p-2  bg-gradient-to-l from-green-500 to-sky-200" : ""} to='/registration'>Registration </NavLink>
+            </h1>
+            <form className='max-w-[600px] mx-auto p-20 border border-gray-300 rounded-b-xl shadow-xl bg-gray-200 dark:bg-gray-600 space-y-4' onSubmit={handleSubmit(onSubmit)}>
                 <div>
-                    <label htmlFor="name" className="block font-bold mb-2 dark:text-white">Name</label>
+                    {/* <label htmlFor="name" className="block font-bold pt-2 dark:text-white">Name</label> */}
                     <Controller
                         name="name"
                         control={control}
                         rules={{ required: 'Name is required' }}
                         render={({ field }) => (
-                            <input {...field} type="text" id="name" className="w-full p-2 mb-2 border border-gray-300 rounded-md" />
+                            <div className='flex items-center gap-4 rounded-md'>
+                                <FaUserAlt className='ms-2 text-3xl px-1 dark:text-white' />
+                                <input {...field} type="text" id="name" placeholder='Name' className="w-full p-2 border border-gray-300 rounded-md" />
+                            </div>
+
                         )}
                     />
-                    {errors.name && <p className="text-red-500 mt-[-10px] mb-2">{errors.name.message}</p>}
+                    {errors.name && <p className="text-red-500 mt-[-10px] pt-2">{errors.name.message}</p>}
                 </div>
 
                 <div>
-                    <label htmlFor="email" className="block dark:text-white font-bold mb-2">Email</label>
+                    {/* <label htmlFor="email" className="block dark:text-white font-bold pt-2">Email</label> */}
                     <Controller
                         name="email"
                         control={control}
@@ -78,13 +86,19 @@ console.log(data);
                                 message: 'Invalid email address',
                             },
                         }}
-                        render={({ field }) => <input {...field} type="email" id="email" className="w-full p-2 mb-2 border border-gray-300 rounded-md" />}
-                    />
-                    {errors.email && <p className="text-red-500 mt-[-10px] mb-2">{errors.email.message}</p>}
+                        render={({ field }) =>
+                        (
+                            <div className='flex items-center gap-4 rounded-md dark:text-white'>
+                            <FaEnvelope className='ms-2 text-3xl px-1' />
+                            <input {...field} type="email" id="email" placeholder='Email' className="w-full p-2 border border-gray-300 rounded-md" />
+                        </div>
+                        )
+                    } />
+                    {errors.email && <p className="text-red-500 mt-[-10px] pt-2">{errors.email.message}</p>}
                 </div>
 
                 <div>
-                    <label htmlFor="password" className="block dark:text-white font-bold mb-2">Password</label>
+                    {/* <label htmlFor="password" className="block dark:text-white font-bold pt-2">Password</label> */}
                     <Controller
                         name="password"
                         control={control}
@@ -92,46 +106,66 @@ console.log(data);
                             required: 'Password is required',
                             minLength: { value: 6, message: 'Password must be at least 6 characters long' },
                         }}
-                        render={({ field }) => <input {...field} type="password" id="password" className="w-full p-2 mb-2 border border-gray-300 rounded-md" />}
+                        render={({ field }) =>                         (
+                            <div className='flex items-center gap-4 rounded-md'>
+                            <FaUserLock className='ms-2 text-3xl px-1 dark:text-white' />
+                            <input {...field} type="password" id="password" placeholder='Password' className="w-full p-2 border border-gray-300 rounded-md" />
+                        </div>
+                        )}
                     />
-                    {errors.password && <p className="text-red-500 mt-[-10px] mb-2">{errors.password.message}</p>}
+                    {errors.password && <p className="text-red-500 mt-[-10px] pt-2">{errors.password.message}</p>}
                 </div>
 
                 <div>
-                    <label htmlFor="photoURL" className="block font-bold mb-2 dark:text-white">Photo URL</label>
+                    {/* <label htmlFor="photoURL" className="block font-bold pt-2 dark:text-white">Photo URL</label> */}
                     <Controller
                         name="photoURL"
                         control={control}
                         rules={{ required: 'Photo URL is required' }}
-                        render={({ field }) => <input {...field} type="text" id="photoURL" className="w-full p-2 mb-2 border border-gray-300 rounded-md" />}
+                        render={({ field }) =>                         (
+                            <div className='flex items-center gap-4 rounded-md'>
+                            <FaImage className='ms-2 text-3xl px-1 dark:text-white' />
+                            <input {...field} type="text" id="photoURL" placeholder='Photo URL' className="w-full p-2 border border-gray-300 rounded-md" />
+                        </div>
+                        )}
                     />
-                    {errors?.photoURL && <p className="text-red-500 mt-[-10px] mb-2">{errors?.photoURL.message}</p>}
+                    {errors?.photoURL && <p className="text-red-500 mt-[-10px] pt-2">{errors?.photoURL.message}</p>}
                 </div>
                 <div>
-                    <label htmlFor="contact" className="block font-bold mb-2 dark:text-white">Contact</label>
+                    {/* <label htmlFor="contact" className="block font-bold pt-2 dark:text-white">Contact</label> */}
                     <Controller
                         name="contact"
                         control={control}
                         rules={{ required: 'Contact is required' }}
-                        render={({ field }) => <input {...field} type="text" id="photoURL" className="w-full p-2 mb-2 border border-gray-300 rounded-md" />}
+                        render={({ field }) =>                         (
+                            <div className='flex items-center gap-4 rounded-md'>
+                            <FaPhoneAlt className='ms-2 text-3xl px-1 dark:text-white' />
+                            <input {...field} type="text" id="contact" placeholder='Contact No.' className="w-full p-2 border border-gray-300 rounded-md" />
+                        </div>
+                        )}
                     />
-                    {errors?.contact && <p className="text-red-500 mt-[-10px] mb-2">{errors?.contact.message}</p>}
+                    {errors?.contact && <p className="text-red-500 mt-[-10px] pt-2">{errors?.contact.message}</p>}
                 </div>
                 <div>
-                    <label htmlFor="address" className="block font-bold mb-2 dark:text-white">Address (Optional)</label>
+                    {/* <label htmlFor="address" className="block font-bold pt-2 dark:text-white">Address (Optional)</label> */}
                     <Controller
                         name="address"
                         control={control}
                         rules={{ required: 'Address is required' }}
-                        render={({ field }) => <input {...field} type="text" id="address" className="w-full p-2 mb-2 border border-gray-300 rounded-md" />}
+                        render={({ field }) =>                         (
+                            <div className='flex items-center gap-4 rounded-md'>
+                            <FaLocationArrow className='ms-2 text-3xl px-1 dark:text-white' />
+                            <input {...field} type="text" id="address" placeholder='Address' className="w-full p-2 border border-gray-300 rounded-md" />
+                        </div>
+                        )}
                     />
-                    {errors?.address && <p className="text-red-500 mt-[-10px] mb-2">{errors?.address.message}</p>}
+                    {errors?.address && <p className="text-red-500 mt-[-10px] pt-2">{errors?.address.message}</p>}
                 </div>
 
                 <h3 className="text-lg dark:text-white">Already have an account? <span className="text-primary dark:text-blue-400 font-semibold"><Link to="/login">Login</Link></span></h3>
 
                 <div className="text-center mt-4 flex justify-center">
-                    <button type="submit" className="bg-blue-500 text-white p-2 px-4 rounded-md cursor-pointer">Register</button>
+                    <button type="submit" className="bg-gradient-to-b from-emerald-600 to-sky-500 text-white py-2 font-semibold px-8 rounded-md cursor-pointer shadow-xl">Register</button>
                 </div>
             </form>
 

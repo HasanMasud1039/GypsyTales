@@ -4,10 +4,10 @@ import logo from '../assets/gypsy2.png'
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-slate-800 text-white text-base-content">
-                <aside className='text-lg text-center space-y-4'>
+            <footer className="footer p-8 flex md:justify-evenly justify-between bg-slate-800 text-white text-base-content">
+                <aside className='md:text-lg text-center space-y-4'>
                     <img className='w-28 mx-auto' src={logo} alt="" />
-                    <p>GypsyTales Ltd.<br />Providing reliable since 2013</p>
+                    <p>GypsyTales Ltd.<br />Providing Reliable Plan Since 2013</p>
                 </aside>
                 <nav>
                     <header className="footer-title">Services</header>
